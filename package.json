@@ -10,6 +10,7 @@
         "start-only": "npm run build && node dist/index.js"
     },
     "dependencies": {
+        "node-pre-gyp":"*",
         "realm-object-server": "2.5.1",
         "typescript": "2.5.3"
     }
