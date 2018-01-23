@@ -1,7 +1,8 @@
+
 ---
 applications:
 - name: realm-boot-strap
-  memory: 512M
-  instances: 1
-  route-path: realm-cf
+  memory: 1024M
+  command: npm start
+  buildpack: https://github.com/cloudfoundry/nodejs-buildpack
   random-route: true
