@@ -1,4 +1,4 @@
-import { BasicServer } from 'realm-object-server'
+import { BasicServer, SyncService } from 'realm-object-server'
 import * as path from 'path'
 
 const server = new BasicServer()
@@ -9,12 +9,13 @@ server.start({
 
         // The address on which to listen for connections
         // address?: string = '0.0.0.0'
-        // address: '0.0.0.0',
+        address: '0.0.0.0',
 
         // The port on which to listen for connections
         // port?: number = 9080
-        // port: 9080,
-        port: 8080,
+        port: Number(process.env.PORT) || 9080,
+
+        maxDownloadSize: 16000000,
 
         // Override the default list of authentication providers
         // authProviders?: IAuthProvider[] = ['password']
@@ -34,7 +35,7 @@ server.start({
 
         // The desired logging threshold. Can be one of: all, trace, debug, detail, info, warn, error, fatal, off)
         // logLevel?: string = 'info'
-        // logLevel: 'info',
+        logLevel: 'debug',
 
         // Enable the HTTPS Server.
         // https?: boolean = false
